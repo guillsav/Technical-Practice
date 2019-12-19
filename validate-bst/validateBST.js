@@ -1,5 +1,3 @@
-const NodeTree = require('./NodeTree');
-
 function validateBST(node) {
     return helper(node, -Infinity, Infinity);
 }
