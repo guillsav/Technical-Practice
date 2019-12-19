@@ -2,19 +2,19 @@ const canConstruct = require('./ransomeNote');
 
 describe('CanConstruct()', () => {
     it('TestCase_1 should return false', () => {
-        magazine = 'a';
-        note = 'b';
+        const magazine = 'a';
+        const note = 'b';
         expect(canConstruct(magazine, note)).toEqual(false);
     });
 
     it('TestCase_2 should return false', () => {
-        magazine = 'aa';
-        note = 'ab';
+        const magazine = 'aa';
+        const note = 'ab';
         expect(canConstruct(magazine, note)).toEqual(false);
     });
 
     it('TestCase_3 should return false', () => {
-        magazine = [
+        const magazine = [
             'Send',
             'a',
             'million',
@@ -23,7 +23,7 @@ describe('CanConstruct()', () => {
             'midnight',
             'tonight'
         ];
-        note = [
+        const note = [
             'dollars',
             'Send',
             'midnight',
@@ -38,7 +38,7 @@ describe('CanConstruct()', () => {
     });
 
     it('TestCase_4 should return false', () => {
-        magazine = [
+        const magazine = [
             'dollars',
             'Send',
             'midnight',
@@ -48,18 +48,26 @@ describe('CanConstruct()', () => {
             'tonight',
             'a'
         ];
-        note = ['Send', 'a', 'million', 'dollars', 'by', 'midnight', 'tonight'];
+        const note = [
+            'Send',
+            'a',
+            'million',
+            'dollars',
+            'by',
+            'midnight',
+            'tonight'
+        ];
         expect(canConstruct(magazine, note)).toEqual(false);
     });
 
     it('TestCase_5 should return true', () => {
-        magazine = 'aab';
-        note = 'aa';
+        const magazine = 'aab';
+        const note = 'aa';
         expect(canConstruct(magazine, note)).toEqual(true);
     });
 
     it('TestCase_6 should return true', () => {
-        magazine = [
+        const magazine = [
             'dollars',
             'Send',
             'midnight',
@@ -70,7 +78,15 @@ describe('CanConstruct()', () => {
             'tonight',
             'a'
         ];
-        note = ['Send', 'a', 'million', 'dollars', 'by', 'midnight', 'tonight'];
+        const note = [
+            'Send',
+            'a',
+            'million',
+            'dollars',
+            'by',
+            'midnight',
+            'tonight'
+        ];
         expect(canConstruct(magazine, note)).toEqual(true);
     });
 });

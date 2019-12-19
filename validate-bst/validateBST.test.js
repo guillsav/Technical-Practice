@@ -3,7 +3,7 @@ const validateBST = require('./validateBST');
 
 describe('Solution', () => {
     it('testCase_1 should return false', () => {
-        let node = new NodeTree(3);
+        const node = new NodeTree(3);
         node.left = new NodeTree(2);
         node.left.left = new NodeTree(1);
         node.right = new NodeTree(4);
@@ -13,7 +13,7 @@ describe('Solution', () => {
     });
 
     it('testCase_2 should return false', () => {
-        let node = new NodeTree(3);
+        const node = new NodeTree(3);
         node.left = new NodeTree(2);
         node.left.left = new NodeTree(1);
         node.right = new NodeTree(5);
@@ -23,7 +23,7 @@ describe('Solution', () => {
     });
 
     it('testCase_3 should return true', () => {
-        let node = new NodeTree(4);
+        const node = new NodeTree(4);
         node.left = new NodeTree(2);
         node.left.left = new NodeTree(1);
         node.left.right = new NodeTree(3);
