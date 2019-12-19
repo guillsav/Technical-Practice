@@ -15,14 +15,14 @@ describe('twoSum()', () => {
         expect(actual).toEqual([0, 1]);
     });
 
-    it('testCase_3 should return [2, 0]', () => {
+    it('testCase_3 should return [0, 2]', () => {
         const nums = [4, 6, 1];
         const target = 5;
         const actual = twoSum(nums, target).sort((a, b) => a - b);
         expect(actual).toEqual([0, 2]);
     });
 
-    it('testCase_4 should return [3, 1]', () => {
+    it('testCase_4 should return [1, 3]', () => {
         const nums = [4, 6, 1, -3];
         const target = 3;
         const actual = twoSum(nums, target).sort((a, b) => a - b);
