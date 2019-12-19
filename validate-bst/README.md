@@ -42,7 +42,7 @@ You are not responsible for reading any input from stdin. Hidden code stubs will
 
 Your function must return a boolean true if the tree is a binary search tree. Otherwise, it must return false.
 
-```javasript
+```javascript
          4
       /     \
     2        6
