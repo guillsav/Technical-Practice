@@ -9,7 +9,6 @@ function mergeSort(arr) {
 
 function helper(arrA, arrB, length) {
     const sortedArray = new Array(length);
-
     let i = (j = k = 0);
 
     while (i < arrA.length && j < arrB.length) {
@@ -20,14 +19,8 @@ function helper(arrA, arrB, length) {
         }
     }
 
-    while (i < arrA.length) {
-        sortedArray[k++] = arrA[i++];
-    }
-
-    while (j < arrB.length) {
-        sortedArray[k++] = arrB[j++];
-    }
-
+    while (i < arrA.length) sortedArray[k++] = arrA[i++];
+    while (j < arrB.length) sortedArray[k++] = arrB[j++];
     return sortedArray;
 }
 
