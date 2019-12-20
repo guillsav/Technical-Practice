@@ -10,9 +10,7 @@ function mergeSort(arr) {
 function helper(arrA, arrB, length) {
     const sortedArray = new Array(length);
 
-    let i = 0;
-    let j = 0;
-    let k = 0;
+    let i = (j = k = 0);
 
     while (i < arrA.length && j < arrB.length) {
         if (arrA[i] <= arrB[j]) {
