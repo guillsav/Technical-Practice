@@ -1,4 +1,4 @@
-function binarySearch(arr, target) {
+function binarySearchIterative(arr, target) {
     let low = 0;
     let high = arr.length - 1;
 
@@ -11,4 +11,22 @@ function binarySearch(arr, target) {
     return -1;
 }
 
-module.exports = binarySearch;
+function binarySearchRecursive(arr, target, start, end) {
+    // base case
+    if (start > end) return -1;
+
+    // Find middle index
+    let middle = Math.floor((start + end) / 2);
+
+    if (arr[middle] < target) {
+        // Get ride of the left half of the array.
+        return binarySearchRecursive(arr, target, middle + 1, end);
+    } else if (arr[middle] > target) {
+        // Get ride of the right half of the array.
+        return binarySearchRecursive(arr, target, start, middle - 1);
+    } else {
+        return middle;
+    }
+}
+
+module.exports = {binarySearchIterative, binarySearchRecursive};
