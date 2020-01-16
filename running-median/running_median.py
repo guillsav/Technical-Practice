@@ -13,4 +13,22 @@ For example, given the sequence [2, 1, 5, 7, 2, 0, 5], your algorithm should pri
 """
 
 def running_median(arr:list) -> int:
-  pass
+  res = []
+  median_list = []
+
+  for i in range(0, len(arr)):
+    res.append(arr[i])
+    res = sorted(res)
+    middle = len(res) // 2
+    if len(res) % 2 == 0:
+      median = (res[middle - 1] + res[middle]) / 2
+      median_list.append(median)
+    else:
+      median = res[middle]
+      median_list.append(median)
+
+  for num in median_list:
+    print(num)
+
+arr = [2, 1, 5, 7, 2, 0, 5]
+running_median(arr)
