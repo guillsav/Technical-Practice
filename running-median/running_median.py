@@ -1,5 +1,6 @@
 """
 This problem was asked by Microsoft.
+
 Compute the running median of a sequence of numbers. That is, given a stream of numbers, print out the median of the list so far on each new element.
 Recall that the median of an even-numbered list is the average of the two middle numbers.
 For example, given the sequence [2, 1, 5, 7, 2, 0, 5], your algorithm should print out:
@@ -13,8 +14,7 @@ For example, given the sequence [2, 1, 5, 7, 2, 0, 5], your algorithm should pri
 """
 
 def running_median(arr:list) -> int:
-  res = []
-  median_list = []
+  res, median_list = [], []
 
   for i in range(0, len(arr)):
     res.append(arr[i])
@@ -32,3 +32,5 @@ def running_median(arr:list) -> int:
 
 arr = [2, 1, 5, 7, 2, 0, 5]
 running_median(arr)
+
+
