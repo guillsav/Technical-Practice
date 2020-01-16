@@ -25,6 +25,7 @@ def rgb(arr:list) -> list:
 def swap(arr, i:str, p:str) -> None:
   arr[i], arr[p] = arr[p], arr[i]
 
-arr = ['G', 'B', 'R', 'R', 'B', 'R', 'G']
 
+arr = ['G', 'B', 'R', 'R', 'B', 'R', 'G']
 print(rgb(arr))
+
