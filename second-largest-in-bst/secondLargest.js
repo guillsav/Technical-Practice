@@ -2,7 +2,7 @@
 This problem was asked by Dropbox.
 Given the root to a binary search tree, find the second largest node in the tree.
 
-===========================   
+==========================================   
 
               10 root
           /      \ 
@@ -45,11 +45,14 @@ function findSecondLargest(node) {
         let current = stack.pop();
 
         if (!current.right) {
-            while (current) {
+            while (current.left || current.right) {
                 if (current.right) {
                     secondLargest = current.right.value;
+                    current = current.right;
+                } else {
+                    secondLargest = current.left.value;
+                    current = current.left;
                 }
-                current = current.left;
             }
         } else {
             secondLargest = current.value;
