@@ -48,9 +48,12 @@ def find_second_largest(node: TreeNode ) -> int:
 
     if not current.right:
       while current:
-        if current.right:
+        if current.left or current.right:
           second_largest = current.right.value
-        current = current.left
+          current = current.right
+        else:
+          second_largest = current.left.value
+          current = current.left
     else:  
       second_largest = current.value
       stack.append(current.right)
