@@ -21,26 +21,11 @@ class DoublyLinkedList {
         this.length = 0;
     }
 
-    insertHead(value) {
+    insert(value) {
         let node = new Node(value);
         this.length++;
 
         if (!this.head) {
-            this.head = node;
-            this.tail = node;
-        }
-        let head = this.head;
-        head.prev = node;
-        node.next = head;
-        this.head = node;
-        this.head.prev = null;
-    }
-
-    insertTail(value) {
-        let node = new Node(value);
-        this.length++;
-
-        if (!this.tail) {
             this.tail = node;
             this.head = node;
         }
@@ -50,6 +35,12 @@ class DoublyLinkedList {
         this.tail = node;
         this.tail.next = null;
     }
+
+    size() {
+        console.log(this.length);
+        return this.length;
+    }
+
     print() {
         const output = [];
         let str;
@@ -60,10 +51,6 @@ class DoublyLinkedList {
             current = current.next;
         }
         console.log('\n', str, '\n');
-    }
-    size() {
-        console.log(this.length);
-        return this.length;
     }
 }
 
@@ -85,10 +72,10 @@ function isPalindrome(list) {
 }
 
 const linkedlist = new DoublyLinkedList();
-linkedlist.insertHead(1);
-linkedlist.insertTail(4);
-linkedlist.insertTail(3);
-linkedlist.insertTail(4);
-linkedlist.insertTail(1);
+linkedlist.insert(1);
+linkedlist.insert(4);
+linkedlist.insert(3);
+linkedlist.insert(4);
+linkedlist.insert(1);
 
 console.log(isPalindrome(linkedlist));

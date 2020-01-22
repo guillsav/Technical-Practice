@@ -16,6 +16,7 @@ class SinglyLinkedList {
         this.tail = null;
         this.length = 0;
     }
+
     insert(value) {
         let node = new Node(value);
         this.length++;
@@ -28,6 +29,12 @@ class SinglyLinkedList {
         tail.next = node;
         this.tail = node;
     }
+
+    size() {
+        console.log(this.length);
+        return this.length;
+    }
+
     print() {
         if (this.length > 0) {
             let current = this.head;
@@ -40,10 +47,6 @@ class SinglyLinkedList {
             }
             console.log('\n', str, '\n');
         }
-    }
-    size() {
-        console.log(this.length);
-        return this.length;
     }
 }
 
