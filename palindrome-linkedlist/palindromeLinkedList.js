@@ -33,6 +33,7 @@ class DoublyLinkedList {
         head.prev = node;
         node.next = head;
         this.head = node;
+        this.head.prev = null;
         this.length++;
     }
 
@@ -48,25 +49,28 @@ class DoublyLinkedList {
         tail.next = node;
         node.prev = tail;
         this.tail = node;
+        this.tail.next = null;
         this.length++;
     }
     print() {
+        const output = [];
+        let str;
         let current = this.head;
         while (current) {
-            console.log(current.value);
+            output.push(current.value);
+            str = output.join(' -> ');
             current = current.next;
         }
+        console.log(str, '\n');
     }
 }
 
-function palindromeLL(list) {
+function isPalindrome(list) {
     let start = list.head;
     let end = list.tail;
 
     while (start !== end) {
-        if (start.value !== end.value) {
-            return false;
-        }
+        if (start.value !== end.value) return false;
         start = start.next;
         end = end.prev;
     }
@@ -81,4 +85,7 @@ ll.insertTail(3);
 ll.insertTail(4);
 ll.insertTail(1);
 
-console.log(palindromeLL(ll));
+ll.print();
+console.log(isPalindrome(ll));
+
+module.exports = {DoublyLinkedList, Node, isPalindrome};
