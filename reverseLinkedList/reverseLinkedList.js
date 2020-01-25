@@ -57,10 +57,12 @@ function reverseLinkedList(list) {
     list.tail = previous;
     list.tail.next = null;
     while (current) {
-        let next = current.next;
-        current.next = previous;
-        previous = current;
-        current = next;
+        // let next = current.next;
+        // current.next = previous;
+        // previous = current;
+        // current = next;
+        // With array desructuring method
+        [current.next, previous, current] = [previous, current, current.next];
     }
     list.head = previous;
     return list;
