@@ -4,9 +4,9 @@ Given an integer array nums, find the contiguous subarray (containing at least o
 
 function maxSubArray(nums) {
     let maxSum = 0;
-    if (!nums.length) return 0;
-
     const len = nums.length;
+    if (len === 0) return 0;
+
     for (let i = 0; i < len; i++) {
         if (nums[i - 1] > 0) nums[i] += nums[i - 1];
         maxSum = Math.max(nums[i], maxSum);
