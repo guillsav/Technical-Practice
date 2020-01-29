@@ -61,7 +61,8 @@ function reverseLinkedList(list) {
         // current.next = previous;
         // previous = current;
         // current = next;
-        // With array desructuring method
+
+        // With array desructuring technique
         [current.next, previous, current] = [previous, current, current.next];
     }
     list.head = previous;

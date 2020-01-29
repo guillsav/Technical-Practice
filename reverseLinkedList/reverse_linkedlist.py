@@ -1,7 +1,6 @@
-''''
-This problem was asked by Google.
-Given the head of a singly linked list, reverse it in-place.
-''''
+# This problem was asked by Google.
+# Given the head of a singly linked list, reverse it in-place.
+
 
 class Node:
     def __init__(self, value):
@@ -53,10 +52,12 @@ def reverse_linked_list(linked_list: Singly_linked_list)-> Singly_linked_list:
     linked_list.tail.next = None
 
     while(current):
-        nextNode = current.next
-        current.next = previous
-        previous = current
-        current = nextNode
+        # nextNode = current.next
+        # current.next = previous
+        # previous = current
+        # current = nextNode
+        
+        current.next, previous, current = previous, current, current.next
     linked_list.head = previous
     return 
 
