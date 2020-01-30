@@ -25,6 +25,7 @@ function tranposeMatrix(A) {
     const matrix = Array(rows)
         .fill(0)
         .map(() => Array(cols).fill(0));
+
     if (rows === 0) return matrix;
 
     for (let i = 0; i < cols; i++) {
