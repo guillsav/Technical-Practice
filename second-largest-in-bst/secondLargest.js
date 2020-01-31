@@ -2,14 +2,14 @@
 This problem was asked by Dropbox.
 Given the root to a binary search tree, find the second largest node in the tree.
 
-==========================================   
+==========================================
 
               10 root
-          /      \ 
+          /      \
         7         18
-      /   \     /   \ 
+      /   \     /   \
     6      9  16     19 * second largest
-  /                    \ 
+  /                    \
 3                       20 largest node
 
 Output: 19
@@ -17,11 +17,11 @@ Output: 19
 =============================
 
             10 root and largest node
-          /   
-        7         
-      /   \     
-    6      9 * second largest  
-  /                   
+          /
+        7
+      /   \
+    6      9 * second largest
+  /
 3
 
 Output: 9

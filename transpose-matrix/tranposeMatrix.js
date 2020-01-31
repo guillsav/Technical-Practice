@@ -14,15 +14,15 @@ Input: [
 
 Ouput: [
   [1, 4, 7],
-  [2, 5, 8],
-  [3, 6, 9]
+	[2, 5, 8],
+  [3, 6, 9]`
 ]
 */
 
 function tranposeMatrix(A) {
     const rows = A.length;
     const cols = A[0].length;
-    const matrix = Array(rows)
+    const matrix = Array(row)
         .fill(0)
         .map(() => Array(cols).fill(0));
 
