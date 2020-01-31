@@ -1,6 +1,6 @@
 /*
-Binary Tree Preorder Traversal
-Given a binary tree, return the preorder traversal of its nodes values.
+Binary Tree Post-Order Traversal
+Given a binary Tree, return the postorder traversal of its nodes values.
 */
 
 class TreeNode {
@@ -10,7 +10,7 @@ class TreeNode {
     }
 }
 
-function preOrderTraversal(root) {
+function postOrderTraversal(root) {
     // Write your code here.
     const stack = [];
     const output = [];
@@ -18,12 +18,12 @@ function preOrderTraversal(root) {
         stack.push(root);
         while (stack.length > 0) {
             let current = stack.pop();
-            output.push(current.value);
-            if (current.right) {
-                stack.push(current.right);
-            }
-            if (current.left) {
+            output.unshift(current.value);
+            if (current.left !== null) {
                 stack.push(current.left);
+            }
+            if (current.right !== null) {
+                stack.push(current.right);
             }
         }
     }
@@ -43,4 +43,4 @@ n2.left = n4;
 n2.right = n5;
 n3.right = n6;
 
-console.log(preOrderTraversal(n1));
+console.log(postOrderTraversal(n1));
