@@ -27,7 +27,6 @@ class TreeNode {
 function solution(tree) {
     // Write your code here.
     if (!tree) return 0;
-
     let depth = 0;
     let stack = [];
     stack.push(tree);
