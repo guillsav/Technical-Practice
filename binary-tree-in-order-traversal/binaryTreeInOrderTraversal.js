@@ -28,6 +28,18 @@ function inOrderTraversal(root) {
     return output;
 }
 
+function inOrderTraversalRecursive(root, res = []) {
+    // Base case.
+    if (!root) {
+        return [];
+    } else {
+        inOrderTraversalRecursive(root.left);
+        res.push(root.val);
+        inOrderTraversalRecursive(root.right);
+    }
+    return res;
+}
+
 let n1 = new TreeNode(8);
 let n2 = new TreeNode(3);
 let n3 = new TreeNode(10);

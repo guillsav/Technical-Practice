@@ -72,4 +72,3 @@ n1.right = n4;
 root.right = n2;
 
 console.log(solution(root, 5));
-console.log(n2.left);
