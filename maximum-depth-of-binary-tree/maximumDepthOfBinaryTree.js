@@ -27,16 +27,22 @@ class TreeNode {
 function solution(tree) {
     // Write your code here.
     if (!tree) return 0;
-    let depth = 0;
+    let leftDepth = 1;
+    let rightDepth = 1;
     let stack = [];
     stack.push(tree);
     while (stack.length > 0) {
         let current = stack.pop();
-        if (current.left) stack.push(current.left);
-        if (current.right) stack.push(current.right);
-        if (!current.right || !current.left) depth++;
+        if (current.left) {
+            stack.push(current.left);
+            leftDepth++;
+        }
+        if (current.right) {
+            stack.push(current.right);
+            rightDepth++;
+        }
     }
-    return depth;
+    return Math.max(leftDepth, rightDepth);
 }
 
 // function solution(tree) {
