@@ -33,4 +33,5 @@ tree.right = n2;
 n1.left = n3;
 n1.right = n4;
 
-console.log(solution(tree, 9));
+console.log(solution(tree, 9)); // Should return null.
+console.log(solution(tree, 2)); // Should return [2, 1, 3].
