@@ -58,6 +58,7 @@ function solution(s, t) {
 }
 
 function helper(root1, root2) {
+    // Base case.
     if (!root1 || !root2) return !root1 && !root2;
     if (root1.val !== root2.val) return false;
     return helper(root1.left, root2.left) && helper(root1.right, root2.right);
