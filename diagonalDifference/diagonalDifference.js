@@ -1,0 +1,50 @@
+/*
+Given a square matrix of size N×N, calculate the absolute difference between the sums of its diagonals.
+Input Format
+The first line contains a single integer, N. The next N lines denote the matrix's rows, with each line
+containing N space-separated integers describing the columns.
+Output Format
+Print the absolute difference between the two sums of the matrix's diagonals as a single integer.
+Sample Input
+3
+11 2 4
+4 5 6
+10 8 -12
+Sample Output
+15
+Explanation
+The primary diagonal is:
+11
+      5
+            -12
+Sum across the primary diagonal: 11 + 5 - 12 = 4
+The secondary diagonal is:
+            4
+      5
+10
+Sum across the secondary diagonal: 4 + 5 + 10 = 19
+Difference: |4 - 19| = 15
+*/
+
+function diagonalDifference(arr) {
+    // Write your code here
+    let start = 0;
+    let end = arr[0].length - 1;
+    let leftDiagonal = 0;
+    let rightDiagonal = 0;
+    for (let i = 0; i < arr.length; i++) {
+        leftDiagonal += arr[i][start];
+        rightDiagonal += arr[i][end];
+        start++;
+        end--;
+    }
+    return Math.abs(leftDiagonal - rightDiagonal);
+}
+
+let m = [
+    [11, 2, 4],
+    [4, 5, 6],
+    [10, 8, -12]
+];
+
+console.log(diagonalDifference());
