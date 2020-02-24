@@ -1,8 +1,8 @@
 """
 This problem was asked by Google.
-Determine whether a doubly linked list is a palindrome. 
+Determine whether a doubly linked list is a palindrome.
 What if it's singly linked?
-For example, 1 -> 4 -> 3 -> 4 -> 1 returns True 
+For example, 1 -> 4 -> 3 -> 4 -> 1 returns True
 while 1 -> 4 returns False.
 """
 
@@ -30,7 +30,7 @@ class Doubly_linked_list:
         if not self.head:
             self.head = node
             self.tail = node
-        
+
         tail = self.tail
         tail.next = node
         node.prev = tail
@@ -73,3 +73,48 @@ linked_list.insert(4);
 linked_list.insert(1);
 
 print(is_palindrome(linked_list))
+
+
+
+def reverseInParentheses(s):
+    # Write your code here
+    start = 0
+    end = len(s) - 1
+
+    while start <= end:
+        if s[start] == "(":
+            j = i = start + 1
+            while s[j] != ")":
+                j += 1
+            swapLetters(s, i, j - 1)
+        start += 1
+    s.replace("(", "")
+    s.replace(")", "")
+    return s
+
+
+def swapLetters(s, i, j):
+    while i != j:
+        s[i], s[j] = s[j], s[i]
+        i += 1
+        j -= 1
+
+
+def condense(head):
+    # Write your code here
+    currentNode = head
+    previousNode = None
+
+    data = {}
+
+    while currentNode:
+        if currentNode.data not in data:
+            data[currentNode.data] = 1
+        elif currentNode.data in data:
+            previousNode.next = None if not currentNode.next else currentNode.next
+        previousNode = currentNode
+        currentNode = currentNode.next
+
+    print(data)
+
+    return head
