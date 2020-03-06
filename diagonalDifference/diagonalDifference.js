@@ -27,24 +27,26 @@ Difference: |4 - 19| = 15
 */
 
 function diagonalDifference(arr) {
-    // Write your code here
-    let start = 0;
-    let end = arr[0].length - 1;
-    let leftDiagonal = 0;
-    let rightDiagonal = 0;
-    for (let i = 0; i < arr.length; i++) {
-        leftDiagonal += arr[i][start];
-        rightDiagonal += arr[i][end];
-        start++;
-        end--;
-    }
-    return Math.abs(leftDiagonal - rightDiagonal);
+  // Write your code here
+  const len = arr.length
+  let start = 0
+  let end = arr[0].length - 1
+  let leftDiagonal = 0
+  let rightDiagonal = 0
+
+  for (let i = 0; i < len; i++) {
+    leftDiagonal += arr[i][start]
+    rightDiagonal += arr[i][end]
+    start++
+    end--
+  }
+  return Math.abs(leftDiagonal - rightDiagonal)
 }
 
-let m = [
-    [11, 2, 4],
-    [4, 5, 6],
-    [10, 8, -12]
-];
+const m = [
+  [11, 2, 4],
+  [4, 5, 6],
+  [10, 8, -12]
+]
 
-console.log(diagonalDifference());
+console.log(diagonalDifference(m))

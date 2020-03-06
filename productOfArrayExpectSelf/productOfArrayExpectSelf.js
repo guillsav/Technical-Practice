@@ -12,24 +12,24 @@ Could you solve it with constant space complexity? (The output array does not co
 */
 
 function productExceptSelf(nums) {
-    const products = Array(nums.length).fill(1);
-    const len = nums.length;
-    let product = 1;
+  const len = nums.length
+  const products = Array(len).fill(1)
+  let product = 1
 
-    for (let i = 0; i < len; i++) {
-        products[i] = product;
-        product *= nums[i];
-    }
+  for (let i = 0; i < len; i++) {
+    products[i] = product
+    product *= nums[i]
+  }
 
-    product = 1;
+  product = 1
 
-    for (let i = len - 1; i >= 0; i--) {
-        products[i] *= product;
-        product *= nums[i];
-    }
+  for (let i = len - 1; i >= 0; i--) {
+    products[i] *= product
+    product *= nums[i]
+  }
 
-    return products;
+  return products
 }
 
-const n = [1, 2, 3, 4];
-console.log(productExceptSelf(n));
+const n = [1, 2, 3, 4]
+console.log(productExceptSelf(n))
